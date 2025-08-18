@@ -3,7 +3,6 @@ import pickle
 import numpy as np 
 import pandas as pd 
 from sklearn.preprocessing import LabelEncoder
-import joblib
 
 
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
@@ -76,7 +75,8 @@ def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
 #Step3: Load and integrate best_model.pkl
 @st.cache_resource
 def load_model():
-    return joblib.load("best_model.pkl")
+    with open("best_model.pkl", "rb") as f:
+        return pickle.load(f)
 model = load_model()
 
 #step4: Display survival probability predictions
