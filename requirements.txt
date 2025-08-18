@@ -27,7 +27,6 @@ libclang==18.1.1
 MarkupSafe==2.1.5
 narwhals==2.1.2
 numpy==1.24.3
-scikit-learn==1.2.2
 oauthlib==3.2.2
 opt_einsum==3.4.0
 packaging==25.0
