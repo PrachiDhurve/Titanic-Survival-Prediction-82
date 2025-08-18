@@ -60,13 +60,18 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Live demo:
-# add streamlit app link
+🚀 Live demo
 
-Project Workflow:
+👉 Streamlit App Link
 
-Data Exploration & Visualization in Jupyter notebook
-Feature Engineering and preprocessing
-Model Training & Evaluation with multiple algorithms
-Best Model Export as best_model.pkl
-Web Deployment with Streamlit
+📂 Project Workflow
+
+1. Data Exploration & Visualization in Jupyter notebook
+
+2. Feature Engineering and preprocessing
+
+3. Model Training & Evaluation with multiple algorithms
+
+4. Best Model Export as best_model.pkl
+
+5. Web Deployment with Streamlit
