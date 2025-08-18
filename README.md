@@ -62,7 +62,7 @@ streamlit run app.py
 
 🚀 Live demo:
 
-# add streamlit app link
+(https://prachidhurve-titanic-survival-prediction-app-s0my0d.streamlit.app/)
 
 📂 Project Workflow
 
