@@ -60,9 +60,9 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-🚀 Live demo
+🚀 Live demo:
 
-👉 Streamlit App Link
+👉  # add streamlit app link
 
 📂 Project Workflow
 
