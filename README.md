@@ -58,6 +58,7 @@ The web app allows users to enter passenger details and get survival predictions
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
 
 Live demo:
 # add streamlit app link
