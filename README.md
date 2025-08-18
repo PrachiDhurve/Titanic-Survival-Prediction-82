@@ -62,7 +62,7 @@ streamlit run app.py
 
 🚀 Live demo:
 
-👉  # add streamlit app link
+# add streamlit app link
 
 📂 Project Workflow
 
