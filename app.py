@@ -7,10 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 
-# Clear all cached data
-st.cache_data.clear()
-st.cache_resource.clear()
-
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
 st.write("This app predicts if a passenger would survive on the Titanic.")
@@ -78,7 +74,7 @@ def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 #Step3: Load and integrate best_model.pkl
-@st.cache_resource
+#@st.cache_resource
 def load_model():
     with open("best_model.pkl", "rb") as f:
         return pickle.load(f)
