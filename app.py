@@ -74,7 +74,7 @@ def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 #Step3: Load and integrate best_model.pkl
-#@st.cache_resource
+@st.cache_resource
 def load_model():
     with open("best_model.pkl", "rb") as f:
         return pickle.load(f)
