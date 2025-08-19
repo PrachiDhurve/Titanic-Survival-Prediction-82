@@ -2,7 +2,13 @@ import streamlit as st
 import pickle
 import numpy as np 
 import pandas as pd 
-from sklearn.preprocessing import LabelEncoder
+import sklearn
+
+st.write("Python version:", sys.version)
+st.write("Streamlit version:", st.__version__)
+st.write("Pandas version:", pd.__version__)
+st.write("NumPy version:", np.__version__)
+st.write("scikit-learn version:", sklearn.__version__)
 
 
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
