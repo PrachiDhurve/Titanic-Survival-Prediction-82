@@ -3,6 +3,7 @@ import pickle
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
 
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
