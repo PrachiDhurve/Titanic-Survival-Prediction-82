@@ -7,6 +7,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 
+# Clear all cached data
+st.cache_data.clear()
+st.cache_resource.clear()
+
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
 st.write("This app predicts if a passenger would survive on the Titanic.")
