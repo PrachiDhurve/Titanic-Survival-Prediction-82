@@ -7,3 +7,4 @@ joblib
 xgboost
 lightgbm
 seaborn
+python==3.10.1
