@@ -5,13 +5,6 @@ import numpy as np
 import pandas as pd 
 import sklearn
 
-print("Python version:", sys.version)
-print("Streamlit version:", st.__version__)
-print("Pandas version:", pd.__version__)
-print("NumPy version:", np.__version__)
-print("scikit-learn version:", sklearn.__version__)
-
-
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
 st.write("This app predicts if a passenger would survive on the Titanic.")
