@@ -6,6 +6,8 @@ import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
+import sys
+import platform
 
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
@@ -131,3 +133,6 @@ if st.button("Predict & Explain"):
         st.bar_chart(importances.sort_values(ascending=False).head(10))
 
     st.info("Note: PassengerId/Name are UI-only. Model uses engineered features like AgeBin, FareBin, FamilySize, etc.")
+
+    st.write("Python version:", sys.version)
+    st.write("Platform:", platform.platform())
