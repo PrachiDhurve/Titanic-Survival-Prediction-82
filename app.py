@@ -32,12 +32,17 @@ ticket = st.text_input("Ticket (optional; used to estimate group size)", value="
 def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
     df = raw_df.copy()
 
-    # Extract Title from Name
+    # Extract Title
     df['Title'] = df['Name'].str.extract(' ([A-Za-z]+)\.', expand=False)
-    title_map = {'Mr':0, 'Miss':1, 'Mrs':2, 'Master':3, 'Dr':4, 'Rev':5,
-                 'Col':6, 'Mlle':1, 'Major':6, 'Ms':1, 'Lady':7, 'Sir':7,
-                 'Capt':6, 'Countess':7, 'Jonkheer':7, 'Don':7, 'Mme':2, 'Dona':7}
-    df['Title_num'] = df['Title'].map(title_map).fillna(0).astype(int)
+
+    # Group rare titles into 'Rare'
+    df['Title'] = df['Title'].replace(
+        ['Lady', 'Countess', 'Capt', 'Col', 'Don', 'Dr', 'Major', 
+         'Rev', 'Sir', 'Jonkheer', 'Dona'], 'Rare'
+    )
+
+    # Also map spelling variations
+    df['Title'] = df['Title'].replace({'Mlle': 'Miss', 'Ms': 'Miss', 'Mme': 'Mrs'})
 
     # FamilySize, IsAlone, FamilyGroup
     df['FamilySize'] = df['Parch'] + df['SibSp'] + 1
@@ -60,8 +65,9 @@ def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
     df['FarePerPersonBin'] = pd.cut(df['FarePerTicket'], bins=[0,7.7625,8.85,24.2882,221.7792], labels=['Low','Medium','High','Very High'])
     df['FarePerPersonBin_num'] = df['FarePerPersonBin'].map({'Low':0,'Medium':1,'High':2,'Very High':3}).fillna(1).astype(int)
 
-    # One-hot encode Sex & Embarked
-    df = pd.get_dummies(df, columns=['Sex','Embarked'])
+    # One-hot encode Title along with other categorical columns
+    cols_to_onehot = ['Sex', 'Embarked', 'Title']
+    df = pd.get_dummies(df, columns=cols_to_onehot)
 
     # Drop unused columns
     for col in ['PassengerId','Name','Ticket','Cabin','FamilyGroup','AgeBin','FareBin','FarePerPersonBin','Title']:
