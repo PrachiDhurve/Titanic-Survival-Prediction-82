@@ -1,5 +1,5 @@
 #Force redeploy
-
+import joblib
 import streamlit as st 
 import pickle
 import numpy as np 
@@ -87,8 +87,8 @@ def engineer_features(raw_df: pd.DataFrame) -> pd.DataFrame:
 #Step3: Load and integrate best_model.pkl
 @st.cache_resource
 def load_model():
-    with open("best_model.pkl", "rb") as f:
-        return pickle.load(f)
+    return joblib.load("best_model.pkl")
+
 model = load_model()
 
 # Step 4: Threshold Slider
