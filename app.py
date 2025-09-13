@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import sys
 import platform
+import sys
+print("Python running from:", sys.executable)
+print("Python version:", sys.version)
 
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 st.title("🚢 Titanic Survival Prediction App")
